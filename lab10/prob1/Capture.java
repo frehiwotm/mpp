@@ -11,11 +11,13 @@ public class Capture {
 	}
 	
 	private <T> void reverseHelper(List<T> list) {
-		List<T> temp = list;
-		for(int i=temp.size()-1, j=0; i >= 0; i--, j++) {
-			list.set(j, list.get(i));
-		}
 		
+		for(int i=list.size()-1, j=0; i > j; i--, j++) {
+			T temp2 = list.get(j);
+			list.set(j, list.get(i));
+			list.set(i, temp2);
+			
+		}	
 	}
 	
 	public static void main(String[] args) {
